@@ -130,30 +130,3 @@ For example, to build the Docker image for the `genai` microservice, you can run
 docker build -f genai/Dockerfile -t <your_username>/genai-service:1.0.0 .
 ```
 
-
-Repeat the above command with the appropriate microservice names and image names.
-
-By following these steps, you can build and run Docker containers for each microservice from the root directory, ensuring that the necessary `common` folder is available to all microservices.
-
-## Contributing
-
-We welcome contributions from the community! If you'd like to contribute to our project, please follow these guidelines:
-
-1. Fork this repository and create a new branch for your feature or bug fix.
-
-2. Make your changes and ensure that the code follows our coding standards.
-
-3. Write tests if applicable and ensure that all existing tests pass.
-
-4. Submit a pull request with a clear description of your changes and why they are needed.
-
-We will review your pull request as soon as possible.
-
-## License
-
-This project is licensed under the [LICENSE NAME] - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-Feel free to customize this README template further to fit your specific project requirements. Providing clear documentation will help both users and contributors understand and use your project effectively.
-
