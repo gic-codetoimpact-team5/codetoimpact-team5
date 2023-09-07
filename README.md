@@ -61,9 +61,9 @@ codetoimpact-team5
 │     ├─ (other files and folders)
 │     └─ main.py
 └─ positions
-   ├─ Dockerfile
-   ├─ requirements.txt
-   └─ src
+│  ├─ Dockerfile
+│  ├─ requirements.txt
+│  └─ src
 │     ├─ __init__.py
 │     ├─ (other files and folders)
 │     └─ main.py
