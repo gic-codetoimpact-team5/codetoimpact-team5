@@ -110,7 +110,7 @@ cd codetoimpact-team5/
 2. Start each microservice individually by building and running the Docker container using the provided `Dockerfile` in each microservice's directory. Replace `MICROSERVICE_NAME` with the name of the microservice you want to build.
 
 ```
-docker build -f &lt;microservice_name&gt;/Dockerfile -t <docker_hub_username>/<image_name>:<image_tag>
+docker build -f <microservice_name>/Dockerfile -t <docker_hub_username>/<image_name>:<image_tag>
 ```
 
 - `MICROSERVICE_NAME`: Replace this with the name of the microservice you want to build (e.g., `genai`).
