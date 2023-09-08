@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+
+from analytics.src.crud import get_etf, get_all_etf_symbols, get_etf_statistics
 from common.models import Daily
 from common.database import SessionLocal
-from src.crud import get_etf, get_all_etf_symbols, get_etf_statistics
 
 from typing import List
 
 router = APIRouter()
-
 
 def get_db():
     db = SessionLocal()
@@ -15,7 +15,7 @@ def get_db():
         yield db
     finally:
         db.close()
-
+        
 
 @router.get("/etf/{etf_id}/volume")
 async def get_max_daily_volume(etf_id: str, db: Session = Depends(get_db)):
