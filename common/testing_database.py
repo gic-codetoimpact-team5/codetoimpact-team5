@@ -11,13 +11,13 @@ from sqlalchemy.pool import StaticPool
 from common.database import Base
 import pandas as pd
 
-class TestDatabase():
+class DatabaseTest():
 
     SQLALCHEMY_DATABASE_URL = "sqlite://"
 
     def __init__(self) -> None:
         self.engine = create_engine(
-            TestDatabase.SQLALCHEMY_DATABASE_URL,
+            DatabaseTest.SQLALCHEMY_DATABASE_URL,
             connect_args={"check_same_thread": False},
             poolclass=StaticPool,
         )

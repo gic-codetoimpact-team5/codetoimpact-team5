@@ -7,7 +7,7 @@ import pandas as pd
 from fastapi.testclient import TestClient
 from analytics.src.main import app
 from analytics.src.routers.etf import get_db
-from common.testing_database import TestDatabase
+from common.testing_database import DatabaseTest
 
 '''
 - Test should be run in the test directory
@@ -16,12 +16,12 @@ from common.testing_database import TestDatabase
 '''
 
 client = TestClient(app)
-TestDatabase = TestDatabase()
-app.dependency_overrides[get_db] = TestDatabase.override_get_db
+testDatabase = DatabaseTest()
+app.dependency_overrides[get_db] = testDatabase.override_get_db
 
 # Add sample data to test database
 df = pd.read_csv('testingData.csv')
-TestDatabase.add_to_test_database(df, 'daily')
+testDatabase.add_to_test_database(df, 'daily')
 
 
 def test_root():
