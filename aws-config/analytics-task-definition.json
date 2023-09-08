@@ -27,12 +27,6 @@
             "name": "ENV_VAR2",
             "value": "value2"
           }
-        ],
-        "secrets": [
-          {
-            "name": "ANALYTICS_DB_SECRET",
-            "valueFrom": "arn:aws:secretsmanager:us-east-1:123456789012:secret:analytics-db-secret-rqX0cJ"
-          }
         ]
       }
     ],

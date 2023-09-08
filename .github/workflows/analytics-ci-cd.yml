@@ -36,7 +36,7 @@ jobs:
     - name: Deploy to ECS
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: task-definition.json
-        service: analytics-service
-        cluster: your-cluster-name
+        task-definition: aws-config/analytics-task-definition.json
+        service: analytics-microservice
+        cluster: codetoimpact 
         wait-for-service-stability: true
