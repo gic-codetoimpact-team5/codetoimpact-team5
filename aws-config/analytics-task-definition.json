@@ -1,0 +1,45 @@
+{
+    "family": "analytics-microservice",
+    "taskRoleArn": "arn:aws:iam::831342134505:role/ECSTaskRole",
+    "executionRoleArn": "arn:aws:iam::831342134505:role/ECSExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+      {
+        "name": "analytics-container",
+        "image": "831342134505.dkr.ecr.ap-southeast-1.amazonaws.com/analytics:1.0.0",
+        "cpu": 256,
+        "memory": 512,
+        "essential": true,
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/analytics-microservice",
+            "awslogs-region": "ap-southeast-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "environment": [
+          {
+            "name": "ENV_VAR1",
+            "value": "value1"
+          },
+          {
+            "name": "ENV_VAR2",
+            "value": "value2"
+          }
+        ],
+        "secrets": [
+          {
+            "name": "ANALYTICS_DB_SECRET",
+            "valueFrom": "arn:aws:secretsmanager:us-east-1:123456789012:secret:analytics-db-secret-rqX0cJ"
+          }
+        ]
+      }
+    ],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+}
+  
